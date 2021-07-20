@@ -24,6 +24,16 @@ namespace DsPrograms
                     BankCounter counter = new BankCounter();
                     counter.Queue();
                     break;
+                case 5:
+                    PalindromeChecker<char> palindrom = new PalindromeChecker<char>();
+                    palindrom.Palindrome();
+                    break;
+                case 6:
+                    Console.WriteLine("Enter a value :");
+                    int n = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Unique Binary Serach trees with "+n+" are :"+NumOfBST.FindNumOfBST(n));
+                    break;
+                   
             }
            
         }

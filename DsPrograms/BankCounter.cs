@@ -34,13 +34,13 @@ namespace DsPrograms
                     case 1:
                         Console.WriteLine("Enter amount to deposit :");
                         int depositAmount = Convert.ToInt32(Console.ReadLine());
-                        bankBlnc = bankBlnc - depositAmount;
+                        bankBlnc = bankBlnc + depositAmount;
                         Console.WriteLine("BankBalance :"+bankBlnc);
                         break;
                     case 2:
                         Console.WriteLine("Enter amount to be withdrawn :");
                         int withDrawalAmount = Convert.ToInt32(Console.ReadLine());
-                        bankBlnc = bankBlnc + withDrawalAmount;
+                        bankBlnc = bankBlnc - withDrawalAmount;
                         Console.WriteLine("Bank Balance :"+bankBlnc);
                         break;
 

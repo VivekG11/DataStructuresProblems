@@ -142,6 +142,21 @@ namespace DsPrograms
                 return 0;
             }
         }
+        public string DequeuePlaindrome()
+        {
+            string rev = " ";
+            while(this.head != null)
+            {
+                if(this.head == null)
+                {
+                    Console.WriteLine("Queue is Empty");
+                }
+                rev = this.head.data + rev;
+                head = head.next;
+            }
+            return rev;
+
+        }
         public void Display()
         {
             Node<T> temp = this.head;
