@@ -20,6 +20,10 @@ namespace DsPrograms
                 case 3:
                     BalanceParanthesis.Input();
                     break;
+                case 4:
+                    BankCounter counter = new BankCounter();
+                    counter.Queue();
+                    break;
             }
            
         }
