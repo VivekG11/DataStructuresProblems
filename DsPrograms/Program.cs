@@ -7,7 +7,18 @@ namespace DsPrograms
         static void Main(string[] args)
         {
             Console.WriteLine("Data Structures problems....");
-            UnOrderedList.UList();
+            Console.WriteLine("Enter a number to perform Particular operation..");
+            int option = Convert.ToInt32(Console.ReadLine());
+            switch(option)
+            {
+                case 1:
+                    UnOrderedList.UList();
+                    break;
+                case 2:
+                    OrderedList.OrderList();
+                    break;
+            }
+           
         }
     }
 }

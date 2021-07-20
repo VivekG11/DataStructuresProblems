@@ -4,10 +4,11 @@ using System.Text;
 
 namespace DsPrograms
 {
-    public class LinkedList<T>
+    public class LinkedList<T>where T:IComparable
     {
         public Node<T> head;
 
+        //Method to search a particular word in the file
         public bool Search(T val)
         {
             Node<T> temp = this.head;
@@ -22,12 +23,15 @@ namespace DsPrograms
             }
             return false;
         }
+
+        //Imserting elements in front of the list
         public void InsertFront(T value)
         {
             Node<T> node = new Node<T>(value);
             node.next = this.head;
             this.head = node;
         }
+   
         public void DelNode(T data)
         {
             Node<T> temp = head;
@@ -46,20 +50,7 @@ namespace DsPrograms
             }
         }
 
-        public void Display()
-        {
-            Node<T> temp = this.head;
-            if(temp == null)
-            {
-                Console.WriteLine("List is empty.....");
-            }
-            while(temp != null)
-            {
-                Console.WriteLine("Nodes in the List are.......");
-                Console.WriteLine(temp.data);
-                temp = temp.next;
-            }
-        }
+       //Returns int string  format from list
         public string ReturnString()
         {
             string str = "";
@@ -79,6 +70,53 @@ namespace DsPrograms
             {
                 Console.WriteLine("Empty");
                 return default;
+            }
+        }
+        public void Sort(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            Node<T> temp = head;
+            if(head == null || node.idata <= head.idata)
+            {
+                node.next = head;
+                head = node;
+            }
+            else if(head.next == null && head.idata < node.idata)
+            {
+                head.next = node;
+            }
+            else
+            {
+                if(temp.next.idata > node.idata)
+                {
+                    node.next = temp.next;
+                    temp.next = node;
+                }
+                else
+                {
+                    while(temp.next != null && temp.next.idata < node.idata)
+                    {
+                        temp = temp.next;
+                    }
+                    node.next = temp.next;
+                    temp.next = node;
+                }
+            }
+
+
+        }
+        public void Display()
+        {
+            Node<T> temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("List is empty.....");
+            }
+            while (temp != null)
+            {
+                
+                Console.Write("\n"+temp.data);
+                temp = temp.next;
             }
         }
     }

@@ -8,6 +8,7 @@ namespace DsPrograms
     {
         public T data;
         public Node<T> next;
+        public int idata;
         public Node(T data)
         {
             this.data = data;
