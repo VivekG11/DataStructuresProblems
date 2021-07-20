@@ -17,6 +17,9 @@ namespace DsPrograms
                 case 2:
                     OrderedList.OrderList();
                     break;
+                case 3:
+                    BalanceParanthesis.Input();
+                    break;
             }
            
         }
